@@ -19,4 +19,5 @@ define('DB_PORT',3306);
 */ 
 define('TABLE_USERS', "Users");
 
+define('TABLE_NEWS','News');
 ?>
