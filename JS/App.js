@@ -20,31 +20,37 @@ var vm = new Vue({
     },
     methods: {
         login: function() {
-            if (this.uname == '' && this.upwd == '') {
-                this.errContent = "请输入用户名和密码。";
-                this.errShow = true;
+            var _self = this;
+            if (_self.uname == '' && _self.upwd == '') {
+                _self.errContent = "请输入用户名和密码。";
+                _self.errShow = true;
                 return;
-            } else if (this.uname == '') {
-                this.errContent = "请输入用户名。";
-                this.errShow = true;
+            } else if (_self.uname == '') {
+                _self.errContent = "请输入用户名。";
+                _self.errShow = true;
                 return;
-            } else if (this.upwd == '') {
-                this.errContent = "请输入密码。";
-                this.errShow = true;
+            } else if (_self.upwd == '') {
+                _self.errContent = "请输入密码。";
+                _self.errShow = true;
                 return;
             }
-            this.LoginRequest.UserName = this.uname;
-            this.LoginRequest.Password = this.upwd;
+            _self.LoginRequest.UserName = _self.uname;
+            _self.LoginRequest.Password = _self.upwd;
             reqwest({
-                url: 'http://localhost:8080/api/userApi.php?action=login',
+                url: 'http://192.168.203.103:8080/api/userApi.php?action=login',
                 method: 'POST',
                 type: 'json',
                 crossOrigin: true,
-                data: this.LoginRequest,
+                data: _self.LoginRequest,
                 success: function(resp) {
-                    this.LoginResponse = resp;
+                    _self.LoginResponse = resp;
+                    if (_self.LoginResponse.Code == 0) {
+                        alert('登录成功');
+                    } else {
+                        _self.errContent = _self.LoginResponse.Msg;
+                        _self.errShow = true;
+                    }
                 }
-                alert(this.LoginResponse.Code);
             });
         },
         gotoReg: function() {

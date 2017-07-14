@@ -19,7 +19,5 @@ class DBFacade{
         $datas = $this->database->select(TABLE_USERS, "*", ['UserName' => $UserName,'Password'=>$Password]);
         return $datas;
     }
-    public function Register
 }
-
 ?>
