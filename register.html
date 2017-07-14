@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="CSS/Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="CSS/Main.css" rel="stylesheet">
+    <script src="JS/jquery-3.2.1.min.js"></script>
+    <script src="JS/jquery.cookie.js"></script>
+    <script src="JS/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="JS/bootstrap.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="JS/ie10-viewport-bug-workaround.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container wapper">
+        <div id="errmsg">
+        </div>
+        <form class="form-signup">
+            <h2 class="form-signup-heading">注 册</h2>
+            <label for="inputUserName" class="sr-only">用户名</label>
+            <input type="text" v-model="uname" class="form-control" placeholder="用户名" required autofocus>
+            <label for="inputEmail" class="sr-only">电子邮箱</label>
+            <input type="email" v-model="uemail" class="form-control" placeholder="电子邮箱" required>
+            <label for="inputPassword" class="sr-only">密码</label>
+            <input type="password" id="upwd" v-model="upwd" class="form-control" placeholder="密码" required>
+            <label for="inputPassword2" class="sr-only">确认密码</label>
+            <input type="password" id="upwd2" v-model="upwd2" class="form-control" placeholder="确认密码" required>
+            <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="register">注 册</button>
+            <button class="btn btn-lg btn-default btn-block" type="button" v-on:click="regCancel">取 消</button>
+        </form>
+    </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+    <script src="JS/app.js"></script>
+</body>
+
+</html>
