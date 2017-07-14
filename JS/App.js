@@ -8,6 +8,15 @@ var vm = new Vue({
         uemail: '',
         upwd: '',
         upwd2: '',
+        LoginRequest: {
+            'UserName': '',
+            'Password': ''
+        },
+        LoginResponse: {
+            'Code': '',
+            'Msg': '',
+            'Users': []
+        }
     },
     methods: {
         login: function() {
@@ -24,7 +33,19 @@ var vm = new Vue({
                 this.errShow = true;
                 return;
             }
-            alert('登录成功！');
+            this.LoginRequest.UserName = this.uname;
+            this.LoginRequest.Password = this.upwd;
+            reqwest({
+                url: 'http://localhost:8080/api/userApi.php?action=login',
+                method: 'POST',
+                type: 'json',
+                crossOrigin: true,
+                data: this.LoginRequest,
+                success: function(resp) {
+                    this.LoginResponse = resp;
+                }
+                alert(this.LoginResponse.Code);
+            });
         },
         gotoReg: function() {
             window.location.href = 'register.html';
