@@ -19,5 +19,15 @@ class DBFacade{
         $datas = $this->database->select(TABLE_USERS, "*", ['UserName' => $UserName,'Password'=>$Password]);
         return $datas;
     }
+    public function Register($UserName,$Password,$Email){
+        $datas=$this->database->count(TABLE_USERS,['UserName' => $UserName,'Password'=>$Password]);
+        if($datas==1){
+            return false;
+        }else{
+            $insertData=$this->database->insert(TABLE_USERS,['UserName'=>$UserName,'Password'=>$Password,'Email'=>$Email,'NickName'=>$UserName,'Phone'=>'']);
+            return true;
+        }
+        
+    }
 }
 ?>
