@@ -1,7 +1,6 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        message: 'test',
         errContent: '',
         errShow: false,
         uname: '',
