@@ -1,0 +1,7 @@
+<li class="active">
+    <a href="$db_bfn">首页</a>
+</li>
+<!--{loop:class:$c cid=0}-->
+<li><a href="category.php?cid=$c[cid]" rel="submenu{$c[cid]}">$c[caption]</a></li>
+<!--{eval $mainarray[]=$c['cid'];}-->
+<!--{/loop:class}-->

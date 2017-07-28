@@ -1,0 +1,56 @@
+<div class="panel-group" id="panel-647792">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="panel-title" data-toggle="collapse" data-parent="#panel-647792" href="#panel-element-907130">最近更新</a>
+        </div>
+        <div id="panel-element-907130" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row">
+                    <!--{eval $i=1;}-->
+                    <!--{loop:video:$video cid=-1|limit=10|order=lastdate DESC,postdate DESC,v.vid DESC}-->
+                    <!--{if $i==1}-->
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="read.php?vid=$video[vid]">
+                                <img alt="$video[picurl]" src="$video[picurl]" />
+                                <div class="caption">
+                                    <h4>
+                                        $video[subject]
+                                    </h4>
+                                    <p>类别: $video[class_name]</p>
+                                    <p>地区: $video[nation_name]</p>
+                                    <p>热度: $video[hits]</p>
+                                    <p>更新日期:
+                                        <!--{echo get_date($video[lastdate], 'Y-m-d')}-->
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--{else}-->
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="read.php?vid=$video[vid]">
+                                <img alt="$video[picurl]" src="$video[picurl]" />
+                                <div class="caption">
+                                    <h4>
+                                        $video[subject]
+                                    </h4>
+                                    <p>类别: $video[class_name]</p>
+                                    <p>地区: $video[nation_name]</p>
+                                    <p>热度: $video[hits]</p>
+                                    <p>更新日期:
+                                        <!--{echo get_date($video[lastdate], 'Y-m-d')}-->
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--{/if}-->
+                    <!--{eval $i++;}-->
+                    <!--{/loop:video}-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

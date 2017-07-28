@@ -1,0 +1,28 @@
+<ul class="breadcrumb">
+    <li>
+        <a href="#">当前位置: $navpath</a>
+    </li>
+</ul>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            视频详细信息
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div>$player</div>
+    </div>
+    <div class="panel-footer">
+        <!--{loop $urldb $pg $msg}-->
+        <div class="caption">
+            <h4>$msg[player] 播放组{$msg[playgroup]}</h4>
+            <div class="content">
+                <!--{loop $msg[urls] $key $v}-->
+                <a class="btn btn-primary" href="play.php?vid=$video[vid]&playgroup=$msg[playgroup]&index=$key" title="{$v[caption]}">$v[caption]</a>
+                <!--{/loop}-->
+                <div class="f-cb"></div>
+            </div>
+        </div>
+        <!--{/loop}-->
+    </div>
+</div>
